@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology to My Bestie</title>
+    <style>
+        /* Global reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Indie Flower', cursive;
+            background: linear-gradient(45deg, #ff99cc, #ff6699, #ff3366);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            text-align: center;
+            color: #fff;
+            animation: backgroundAnimation 8s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #fff;
+            animation: fadeIn 1.5s ease-out;
+            text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .sub-heading {
+            font-size: 1.8rem;
+            color: #fce4f7;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-out 0.3s;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .see-btn {
+            padding: 20px 40px;
+            font-size: 1.8rem;
+            background-color: #ff4f8f;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+            color: white;
+            margin-top: 50px;
+            text-transform: uppercase;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            animation: buttonPop 1.5s ease-out 0.5s;
+        }
+
+        .see-btn:hover {
+            background-color: #ff3366;
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Page for Shayari */
+        .shyari-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 2s ease-out;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .shyari-heading {
+            font-size: 3rem;
+            color: #fce4f7;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 2s ease-out;
+        }
+
+        .shyari-text {
+            font-size: 2rem;
+            color: #fff;
+            margin-top: 30px;
+            line-height: 1.8;
+            animation: textSlideUp 2s ease-out;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            max-width: 700px;
+        }
+
+        .shyari-container p:last-child {
+            margin-top: 40px;
+            font-style: italic;
+            font-size: 1.8rem;
+            color: #ff99cc;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes buttonPop {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes textSlideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(45deg, #ff99cc, #ff6699, #ff3366); }
+            50% { background: linear-gradient(45deg, #fbb0d8, #f6c1d0, #f9a9c4); }
+            100% { background: linear-gradient(45deg, #ff99cc, #ff6699, #ff3366); }
+        }
+
+        /* Hindi Font */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500&display=swap');
+    </style>
+</head>
+<body>
+
+    <!-- Main Apology Page -->
+    <div class="main-container">
+        <h1>I'm Sorry, My Dear Bestie!</h1>
+        <p class="sub-heading">Here are some heartfelt lines for you!</p>
+        <button class="see-btn" onclick="goToShyariPage()">See</button>
+    </div>
+
+    <!-- Shayari Page -->
+    <div class="shyari-container" id="shyariPage" style="display: none;">
+        <h1 class="shyari-heading">Some Beautyfull Lines For You</h1>
+        <p class="shyari-text">
+            "तेरी हंसी की खनक अब दिल में बसी है, <br>
+            तेरे बिना मेरी सुबह और रातें अधूरी सी हैं। <br>
+            तेरी यादों से हर लम्हा महकता है, <br>
+            मुझसे हुई गलती को माफ कर दे, मेरी सबसे प्यारी दोस्त।"
+        </p>
+        <p>Still Waiting For You...</p>
+    </div>
+
+    <script>
+        // Transition function to Shayari Page
+        function goToShyariPage() {
+            document.querySelector('.main-container').style.display = 'none';
+            document.getElementById('shyariPage').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
